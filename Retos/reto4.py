@@ -51,6 +51,7 @@ cantidadProgramadaMedicamentos=[]
 matrizMed=[]
 matrizPacientes=[]
 
+
 #se puede hacer una funcion para llenar matrices
 
 for i in range (cantidadSucursales):
@@ -59,19 +60,46 @@ for i in range (cantidadSucursales):
     matrizMed.insert(i,vectorCtdXMed)
 print(matrizMed)
        
-for j in range (cantidadPacientes):
+for i in range (cantidadPacientes):
     vectorPacientes=[]
-    vectorPacientes=dividirEntrada(input(f"Digite numero de sucursal, tipo medicamento, existencias solicitadas, presion sistolica y presion diastolica del paciente {j+1}"))
-    matrizPacientes.insert(j,vectorPacientes)
+    vectorPacientes=dividirEntrada(input(f"Digite numero de sucursal, tipo medicamento, existencias solicitadas, presion sistolica y presion diastolica del paciente {i+1}"))
+    matrizPacientes.insert(i,vectorPacientes)
+    x=matrizPacientes[i][0] #sucursal
+    y=matrizPacientes[i][1] #tipo medicamento
+    z=matrizPacientes[i][3] #existencias
+    #como llenar otra matriz del tamaño sucursal X tipomed con contenido existencias a entregar
+    for j in range (cantidadSucursales):
+        vectorCtdProgMed=[]
+        vectorCtdXMed.append(z)
 print(matrizPacientes)
 
+
+
+
+
+"""
+
 for i in range (cantidadPacientes):
-    presionSistolica=matrizPacientes[i,4]
-    presionDiastolica=matrizPacientes[i,5]
-    ctdMedXPaciente=validarPresion(presionSistolica,presionDiastolica)
-    cantidadProgramadaMedicamentos=matrizPacientes[i,3]
+    temporal1=matrizPacientes[i][0] 
+    temporal2=matrizPacientes[i][1] 
+    print(temporal1 , temporal2)
+    print(matrizPacientes[temporal1][temporal2])
+
+for i in range (cantidadSucursales):
+    vectorCtdProgMed=[]
+
+
+
+
+for i in range (cantidadPacientes):
+    for j in range (cantidadSucursales):
+        presionSistolica=matrizPacientes[i][4]
+        presionDiastolica=matrizPacientes[i][5]
+        ctdMedXPaciente=validarPresion(presionSistolica,presionDiastolica)
+        cantidadProgramadaMedicamentos=matrizPacientes[i][3]
 
 #dejar las cantidades a entregar
 for i in range (cantidadSucursales):
     for j in range:
-         matrizMed[i,j]
+         matrizMed[i][j]    
+         """
