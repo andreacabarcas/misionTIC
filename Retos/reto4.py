@@ -59,9 +59,9 @@ def estadisticasSucursal (numSucursal,cantidadMedTotales,existenciasMed,cantidad
     contador=0
     for i in range (len(matrizPacientes)):
         if matrizPacientes[i][0] == numSucursal+1:
-            acumulador=acumulador+matrizPacientes[i][2]
             contador+=1
     try:       
+        acumulador=sum(cantidadProgramada[numSucursal])
         print(format(acumulador/contador,'.2f'))
     except:
         print('0.00')
@@ -115,8 +115,8 @@ for i in range (cantidadPacientes):
     z=vectorPacientes[2] #existencias
     presionSistolica=vectorPacientes[3]
     presionDiastolica=vectorPacientes[4]
+    matrizPacientes.append(vectorPacientes) #para que las posiciones no queden vacias
     if validarPresion(presionSistolica,presionDiastolica):
-        matrizPacientes.append(vectorPacientes) #para que las posiciones no queden vacias
         matrizMed[x-1][y-1]-=z
         cantidadProgramadaMedicamentos[x-1][y-1]+=z
     #como llenar otra matriz del tamaño sucursal X tipomed con contenido existencias a entregar
